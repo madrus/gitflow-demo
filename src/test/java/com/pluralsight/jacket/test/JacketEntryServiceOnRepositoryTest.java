@@ -20,18 +20,19 @@ public class JacketEntryServiceOnRepositoryTest {
     EntryRepositoryEntryDetailsService jacketEntryServiceOnRepository;
     EntryRepository repository;
     Log log;
-    
+
     @Before
     public void before(){
         repository = mock(EntryRepository.class);
         log = mock(Log.class);
+        console.log("hello, world");
     }
 
     @Test
-    public void shouldReturnAllEntries() {    
+    public void shouldReturnAllEntries() {
 
         when(repository.findAll()).thenReturn(Arrays.asList(new Entry()));
-        
+
         EntryRepositoryEntryDetailsService service = new EntryRepositoryEntryDetailsService(repository, log);
         List<JacketEntry> entries = service.getAllEntries();
 
