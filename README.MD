@@ -146,4 +146,32 @@
 
 *  > `git flow release publish sprint1-release`
 
+   Now, on `github` we can see this release branch
+   
+*  Dan can now test and debug this release:
 
+   > `git flow release track sprint1-release` 
+
+*  When he is finished, he can add and commit changes as usual and push it:
+
+   > `git push`
+   
+*  But Dan has also to merge this change on the `develop` branch:
+
+   > `git checkout develop`  
+   > `git pull` (= to make sure there are no new changes)  
+   > `git merge release/sprint1-release` (= merge `release` to `develop`)  
+   > `git push` (= push the merged version back to remote `develop`)  
+   
+## Finishing the release
+   
+*  When everything is ready, Andrea can finish the release:
+
+   > `git checkout release/sprint1-release`  
+   > `git pull`  
+   > `git flow release finish sprint1-release`   
+   
+   > This merges the `release` into `master` with `sprint1-release` tag.
+   > The release is also merged back into `develop`. The release branch
+   > `release/sprint1-release` has been deleted both locally and remotely.
+   > And we are back on `develop` branch.
