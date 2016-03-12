@@ -20,11 +20,16 @@ public class JacketEntryServiceOnRepositoryTest {
     EntryRepositoryEntryDetailsService jacketEntryServiceOnRepository;
     EntryRepository repository;
     Log log;
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> release/sprint1-release
     @Before
     public void before(){
         repository = mock(EntryRepository.class);
         log = mock(Log.class);
+<<<<<<< HEAD
     }
 
     @Test
@@ -32,6 +37,16 @@ public class JacketEntryServiceOnRepositoryTest {
 
         when(repository.findAll()).thenReturn(Arrays.asList(new Entry()));
         
+=======
+        console.log("hello, world");
+    }
+
+    @Test
+    public void shouldReturnAllEntries() {
+
+        when(repository.findAll()).thenReturn(Arrays.asList(new Entry()));
+
+>>>>>>> release/sprint1-release
         EntryRepositoryEntryDetailsService service = new EntryRepositoryEntryDetailsService(repository, log);
         List<JacketEntry> entries = service.getAllEntries();
 
