@@ -19,12 +19,23 @@
 *  create a new folder `gitflow-demo`
 *  start `git-bash` in this folder
 
+<<<<<<< HEAD
    > `git init`
+=======
+   > `git init`  
+>>>>>>> 17044c235b2e5ef51b3065b70ac21a80e053ed6d
    > `git flow init`
 
 *  create a new or use the existing git repository on `github` and copy its link
 *  > `git remote add origin https://github.com/madrus/gitflow-demo.git`
 *  > `git checkout master`
+<<<<<<< HEAD
+=======
+*  let git remember your `github` password:
+
+   > `git config --global credential.helper wincred`
+
+>>>>>>> 17044c235b2e5ef51b3065b70ac21a80e053ed6d
 *  > `git push -u origin master`
 *  > `git checkout develop`
 *  > `git push -u origin develop`
@@ -68,11 +79,19 @@
    This will create a remote feature branch, push the local changes to it and 
    start tracking the remote feature branch.
 
+<<<<<<< HEAD
 ## Collaborate on the feature branch of someone else
 
 *  First she has to initialize `gitflow` and `add remote`:
 
    > `git flow init`
+=======
+## Collaborate on the feature branch
+
+*  First she has to initialize `gitflow` and `add remote`:
+
+   > `git flow init`  
+>>>>>>> 17044c235b2e5ef51b3065b70ac21a80e053ed6d
    > `git remote add origin https://github.com/madrus/gitflow-demo.git`
    
 *  If she forgot the next command, she can use `gitflow` help:
@@ -86,4 +105,49 @@
 
    > `git flow feature track 20-UsersCanAccessSingleEntries` 
 
+<<<<<<< HEAD
 *  Now, she can go ahead and make some changes.
+=======
+*  Now, she can go ahead and make some changes. After that add and commit them:
+
+   > `git add .`
+   > `git commit -am "blablabla"`
+   
+*  And push them back to the remote (note that we don't use any parameters):
+
+   > `git push`
+   
+*  Now Dan can pull these changes to his own computer (again no parameters):
+
+   > `git pull`
+   
+## Publishing to develop and finishing the feature branch to try it out
+
+*  Create a pull request in `github` based on `develop branch` compaired
+   with the `feature branch` but **don't merge the pull request!!!** 
+   
+   Because it is not up to us to merge but for the original developer
+   when he is finished with the feature branch. 
+   
+   Press the `Close pull request` button. This closes the pull request with unmerged commits.
+*  Now Dan can finish the feature branch:
+
+   > `git flow finish 20-UsersCanAccessSingleEntries`
+   
+   This will merge all the changes to `develop` branch and push them 
+   back to remote. This will also delete the feature branch both locally
+   and on the remote. 
+   
+   Dan is now back on his `develop` branch.
+   
+*  All other collaborators on the feature branch like Rachael have to manually
+   delete it locally:
+   
+   > `git checkout develop`  
+   > `git branch -d feature/20-UsersCanAccessSingleEntries`  
+   > `git branch` (to check that it has been successfully deleted)
+   
+## Creating a release branch
+
+*  
+>>>>>>> 17044c235b2e5ef51b3065b70ac21a80e053ed6d
