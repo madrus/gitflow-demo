@@ -3,7 +3,6 @@ package com.pluralsight.jacket.entry.data.models;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
-
 @Entity
 @Table(name = "entries")
 public class Entry extends BaseModel {
