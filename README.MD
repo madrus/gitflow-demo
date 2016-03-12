@@ -131,4 +131,19 @@
    
 ## Creating a release branch
 
-*  
+*  Release branch is created in order to prepair the new release and
+   to pass it on to the QA, systest and acceptance test. We go back
+   to Andrea who is responsible for this release.
+   
+   > It is important to remember that if any bugs are found in the `release`
+   > branch, they should be fixed in it and then merged back to `develop`
+   > and active `feature` branches.
+   
+*  > `git flow release start sprint1-release`
+
+   This will create a release branch and only on Andrea's machine. 
+   Therefore, it must be published for other people to be able to test it.
+
+*  > `git flow release publish sprint1-release`
+
+
