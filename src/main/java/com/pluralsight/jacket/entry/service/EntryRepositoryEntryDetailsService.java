@@ -20,18 +20,17 @@ public class EntryRepositoryEntryDetailsService implements JacketEntryService {
 
 	EntryRepository repository;
 	Log log;
-	
+
     @Inject
     public EntryRepositoryEntryDetailsService(EntryRepository repository, Log log) {
     	this.repository = repository;
     	this.log = log;
     }
 
-
     @Override
     public List<JacketEntry> getAllEntries() {
     	Iterable<Entry> entries = repository.findAll();
-    	List<JacketEntry> serviceEntries = new LinkedList<JacketEntry>(); 
+    	List<JacketEntry> serviceEntries = new LinkedList<JacketEntry>();
     	if(entries != null)
     	{
     		entries.forEach(e -> serviceEntries.add(new JacketEntry(e.getUrl())));
@@ -57,11 +56,9 @@ public class EntryRepositoryEntryDetailsService implements JacketEntryService {
  		return jacketEntry;
 	}
 
-
 	@Override
 	@Transactional(readOnly = false)
 	public void updateEntry(JacketEntry e) {
-		
+
 	}
 }
-
