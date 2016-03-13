@@ -175,3 +175,5 @@
    > The release is also merged back into `develop`. The release branch
    > `release/sprint1-release` has been deleted both locally and remotely.
    > And we are back on `develop` branch.
+   
+*
