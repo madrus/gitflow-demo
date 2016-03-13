@@ -21,16 +21,26 @@ public class JacketEntryServiceOnRepositoryTest {
     EntryRepository repository;
     Log log;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
     
 >>>>>>> hf1
+=======
+    
+=======
+
+>>>>>>> release/sprint1-release
+>>>>>>> bd3dcb6c94605feb645a9757c67759dc3d17ecd4
     @Before
     public void before(){
         repository = mock(EntryRepository.class);
         log = mock(Log.class);
 <<<<<<< HEAD
+<<<<<<< HEAD
         console.log("hello, world");
+=======
+>>>>>>> bd3dcb6c94605feb645a9757c67759dc3d17ecd4
     }
 
     @Test
@@ -45,8 +55,13 @@ public class JacketEntryServiceOnRepositoryTest {
     public void shouldReturnAllEntries() {    
 
         when(repository.findAll()).thenReturn(Arrays.asList(new Entry()));
+<<<<<<< HEAD
         
 >>>>>>> hf1
+=======
+
+>>>>>>> release/sprint1-release
+>>>>>>> bd3dcb6c94605feb645a9757c67759dc3d17ecd4
         EntryRepositoryEntryDetailsService service = new EntryRepositoryEntryDetailsService(repository, log);
         List<JacketEntry> entries = service.getAllEntries();
 

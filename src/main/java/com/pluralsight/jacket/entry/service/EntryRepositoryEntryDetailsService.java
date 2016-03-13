@@ -21,16 +21,21 @@ public class EntryRepositoryEntryDetailsService implements JacketEntryService {
 	EntryRepository repository;
 	Log log;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 	
 >>>>>>> hf1
+=======
+
+>>>>>>> bd3dcb6c94605feb645a9757c67759dc3d17ecd4
     @Inject
     public EntryRepositoryEntryDetailsService(EntryRepository repository, Log log) {
     	this.repository = repository;
     	this.log = log;
     }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
     @Override
     public List<JacketEntry> getAllEntries() {
@@ -43,6 +48,12 @@ public class EntryRepositoryEntryDetailsService implements JacketEntryService {
     	Iterable<Entry> entries = repository.findAll();
     	List<JacketEntry> serviceEntries = new LinkedList<JacketEntry>(); 
 >>>>>>> hf1
+=======
+    @Override
+    public List<JacketEntry> getAllEntries() {
+    	Iterable<Entry> entries = repository.findAll();
+    	List<JacketEntry> serviceEntries = new LinkedList<JacketEntry>();
+>>>>>>> bd3dcb6c94605feb645a9757c67759dc3d17ecd4
     	if(entries != null)
     	{
     		entries.forEach(e -> serviceEntries.add(new JacketEntry(e.getUrl())));
@@ -69,6 +80,7 @@ public class EntryRepositoryEntryDetailsService implements JacketEntryService {
 	}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 	@Override
 	@Transactional(readOnly = false)
 	public void updateEntry(JacketEntry e) {
@@ -77,11 +89,16 @@ public class EntryRepositoryEntryDetailsService implements JacketEntryService {
 }
 =======
 
+=======
+>>>>>>> bd3dcb6c94605feb645a9757c67759dc3d17ecd4
 	@Override
 	@Transactional(readOnly = false)
 	public void updateEntry(JacketEntry e) {
 		
 	}
 }
+<<<<<<< HEAD
 
 >>>>>>> hf1
+=======
+>>>>>>> bd3dcb6c94605feb645a9757c67759dc3d17ecd4

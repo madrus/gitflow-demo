@@ -19,23 +19,16 @@
 *  create a new folder `gitflow-demo`
 *  start `git-bash` in this folder
 
-<<<<<<< HEAD
-   > `git init`
-=======
    > `git init`  
->>>>>>> 17044c235b2e5ef51b3065b70ac21a80e053ed6d
    > `git flow init`
 
 *  create a new or use the existing git repository on `github` and copy its link
 *  > `git remote add origin https://github.com/madrus/gitflow-demo.git`
 *  > `git checkout master`
-<<<<<<< HEAD
-=======
 *  let git remember your `github` password:
 
    > `git config --global credential.helper wincred`
 
->>>>>>> 17044c235b2e5ef51b3065b70ac21a80e053ed6d
 *  > `git push -u origin master`
 *  > `git checkout develop`
 *  > `git push -u origin develop`
@@ -79,19 +72,11 @@
    This will create a remote feature branch, push the local changes to it and 
    start tracking the remote feature branch.
 
-<<<<<<< HEAD
-## Collaborate on the feature branch of someone else
-
-*  First she has to initialize `gitflow` and `add remote`:
-
-   > `git flow init`
-=======
 ## Collaborate on the feature branch
 
 *  First she has to initialize `gitflow` and `add remote`:
 
    > `git flow init`  
->>>>>>> 17044c235b2e5ef51b3065b70ac21a80e053ed6d
    > `git remote add origin https://github.com/madrus/gitflow-demo.git`
    
 *  If she forgot the next command, she can use `gitflow` help:
@@ -105,9 +90,6 @@
 
    > `git flow feature track 20-UsersCanAccessSingleEntries` 
 
-<<<<<<< HEAD
-*  Now, she can go ahead and make some changes.
-=======
 *  Now, she can go ahead and make some changes. After that add and commit them:
 
    > `git add .`
@@ -149,10 +131,6 @@
    
 ## Creating a release branch
 
-<<<<<<< HEAD
-*  
->>>>>>> 17044c235b2e5ef51b3065b70ac21a80e053ed6d
-=======
 *  Release branch is created in order to prepair the new release and
    to pass it on to the QA, systest and acceptance test. We go back
    to Andrea who is responsible for this release.
@@ -168,5 +146,32 @@
 
 *  > `git flow release publish sprint1-release`
 
+   Now, on `github` we can see this release branch
+   
+*  Dan can now test and debug this release:
 
->>>>>>> release/sprint1-release
+   > `git flow release track sprint1-release` 
+
+*  When he is finished, he can add and commit changes as usual and push it:
+
+   > `git push`
+   
+*  But Dan has also to merge this change on the `develop` branch:
+
+   > `git checkout develop`  
+   > `git pull` (= to make sure there are no new changes)  
+   > `git merge release/sprint1-release` (= merge `release` to `develop`)  
+   > `git push` (= push the merged version back to remote `develop`)  
+   
+## Finishing the release
+   
+*  When everything is ready, Andrea can finish the release:
+
+   > `git checkout release/sprint1-release`  
+   > `git pull`  
+   > `git flow release finish sprint1-release`   
+   
+   > This merges the `release` into `master` with `sprint1-release` tag.
+   > The release is also merged back into `develop`. The release branch
+   > `release/sprint1-release` has been deleted both locally and remotely.
+   > And we are back on `develop` branch.
