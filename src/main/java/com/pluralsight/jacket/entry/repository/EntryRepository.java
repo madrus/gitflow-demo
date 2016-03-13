@@ -8,5 +8,5 @@ import com.pluralsight.jacket.entry.data.models.Entry;
 
 @Named
 public interface EntryRepository extends CrudRepository<Entry, Long> {
-	
+    // dummy comment
 }
